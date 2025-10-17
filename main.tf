@@ -82,6 +82,6 @@ module "blog_autoscaling" {
   vpc_zone_identifier = module.blog_vpc.public_subnets
   target_group_arns   = [aws_lb_target_group.blog.arn]
   security_groups     = [module.blog_sg.security_group_id]
-  instance_type       = var.instance_type # set to "t3.nano" for Free Tier
+  instance_type       = "t3.nano" 
   image_id            = data.aws_ami.app_ami.id
 }
